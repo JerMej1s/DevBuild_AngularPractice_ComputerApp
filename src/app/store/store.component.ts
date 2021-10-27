@@ -11,6 +11,10 @@ export class StoreComponent implements OnInit {
 
   myinv?: Item[];
 
+  newName?: String;
+  newPrice?: Number;
+  newQuantity?: Number;
+
   constructor(private inventory: InventoryService) {
     this.myinv = this.inventory.readAllItems();
     console.log(this.myinv);
@@ -19,8 +23,21 @@ export class StoreComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  createItem() {
+    if (this.newName && this.newPrice && this.newQuantity) {
+      this.inventory.createItem(
+        {
+          name: this.newName,
+          price: this.newPrice,
+          quantity: this.newQuantity
+        }
+        );
+    }
+  }
+
   debug() {
     console.log(this.inventory.readAllItems());
+    console.log(this.newName);
   }
 
 }

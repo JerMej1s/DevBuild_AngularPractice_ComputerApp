@@ -1,5 +1,14 @@
 <div class="StoreItem" *ngIf="theItem">
     <div>Name: {{ theItem.name }}</div>
     <div>Price: <input type="text" [(ngModel)]="theItem.price" /></div>
-    <div>Quantity: {{ theItem.quantity }}</div>
+        <button (click)="deleteItem()">Delete</button>
+    <div>Quantity:
+        <select [(ngModel)]="theItem.quantity">
+            <option>0</option>
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+        </select>
+    </div>
 </div>

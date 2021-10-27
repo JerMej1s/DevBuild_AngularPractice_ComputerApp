@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { InventoryService } from '../inventory.service';
 import { Item } from '../item';
 
 @Component({
@@ -10,9 +11,15 @@ export class StoreItemComponent implements OnInit {
 
   @Input() theItem?: Item;
 
-  constructor() { }
+  constructor(private inventory: InventoryService) { }
 
   ngOnInit(): void {
+  }
+
+  deleteItem() {
+    if(this.theItem) {
+      this.inventory.deleteItem(this.theItem);
+    }
   }
 
 }
