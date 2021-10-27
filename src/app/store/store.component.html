@@ -1,0 +1,7 @@
+<h1>Welcome to the Store</h1>
+
+<ng-container *ngFor='let item of myinv'>
+    <app-store-item [theItem]="item"></app-store-item>
+</ng-container>
+
+<button (click)="debug()">Debug</button>

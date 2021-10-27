@@ -1,0 +1,5 @@
+<div class="StoreItem" *ngIf="theItem">
+    <div>Name: {{ theItem.name }}</div>
+    <div>Price: <input type="text" [(ngModel)]="theItem.price" /></div>
+    <div>Quantity: {{ theItem.quantity }}</div>
+</div>
